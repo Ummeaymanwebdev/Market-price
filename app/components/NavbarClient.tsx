@@ -53,7 +53,7 @@ export default function NavbarClient({
                   className="btn btn-ghost btn-sm sm:btn-md"
                 >
                   {user.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
+                   
                     <img
                       src={user.image}
                       alt={user.name}
