@@ -158,6 +158,4 @@ Built as a Next.js assignment project. Price data is provided by the Programming
 
 <div align="center">
 
-Made with ❤️ in Bangladesh
-
 </div>
