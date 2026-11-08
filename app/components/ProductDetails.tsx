@@ -15,7 +15,6 @@ export default function ProductDetails({
   const down = p.change < 0;
   const unitShort = p.unit.replace("প্রতি ", "");
 
-  // বাজারগুলোর হিসাব
   const mins = p.markets.map((m) => m.min).filter((n) => n > 0);
   const maxs = p.markets.map((m) => m.max).filter((n) => n > 0);
   const minPrice = mins.length ? Math.min(...mins) : p.price;
@@ -27,7 +26,6 @@ export default function ProductDetails({
       )
     : p.price;
 
-  // গতকালের তুলনায় কত টাকা বদলেছে
   const diff = p.yesterday > 0 ? Math.abs(p.price - p.yesterday) : 0;
 
   const summary = [
@@ -36,7 +34,6 @@ export default function ProductDetails({
     { label: "গড় দাম", value: avgPrice },
   ];
 
-  // আগের দামের তুলনা (যেগুলো পাওয়া গেছে শুধু সেগুলো)
   const compare = [
     { label: "গতকাল", value: p.yesterday },
     { label: "গত সপ্তাহ", value: p.lastWeek },
