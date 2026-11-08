@@ -1,25 +1,30 @@
 import { betterAuth } from "better-auth";
+import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { MongoClient } from "mongodb";
-import { mongodbAdapter } from "@better-auth/mongo-adapter";
 
-const mongoClient = new MongoClient(process.env.MONGODB_URI!);
+const client = new MongoClient(process.env.MONGODB_URI!);
+const db = client.db();
 
-const db = mongoClient.db();
+const googleId = process.env.GOOGLE_CLIENT_ID;
+const googleSecret = process.env.GOOGLE_CLIENT_SECRET;
+const githubId = process.env.GITHUB_CLIENT_ID;
+const githubSecret = process.env.GITHUB_CLIENT_SECRET;
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db, {
-    client: mongoClient,
-  }),
+  database: mongodbAdapter(db),
 
   emailAndPassword: {
     enabled: true,
+    autoSignIn: false, // সাইন আপের পর নিজে থেকে লগইন হবে না
   },
 
+  // শুধু google ও github, আর কোনো key এখানে থাকবে না
   socialProviders: {
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-    },
-
+    ...(googleId && googleSecret
+      ? { google: { clientId: googleId, clientSecret: googleSecret } }
+      : {}),
+    ...(githubId && githubSecret
+      ? { github: { clientId: githubId, clientSecret: githubSecret } }
+      : {}),
   },
 });
