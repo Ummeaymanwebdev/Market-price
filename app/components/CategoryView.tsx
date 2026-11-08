@@ -18,7 +18,6 @@ export default function CategoryView({
 }) {
   const [sort, setSort] = useState<SortKey>("default");
 
-  // price আসল সংখ্যা, তাই বাংলা সংখ্যাতেও ঠিকভাবে সর্ট হয়
   const sorted = useMemo(() => {
     const list = [...products];
     if (sort === "asc") list.sort((a, b) => a.price - b.price);
