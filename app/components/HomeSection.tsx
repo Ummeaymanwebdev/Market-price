@@ -91,7 +91,7 @@ export default async function HomeSections() {
   );
 }
 
-// ডেটা আসার আগে এটা দেখায়
+
 export function HomeSectionsSkeleton() {
   return (
     <>
