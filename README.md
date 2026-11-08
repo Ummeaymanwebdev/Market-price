@@ -6,7 +6,7 @@
 
 A responsive Bangla web app to track today's market prices of rice, lentils, oil, vegetables, fish, meat, eggs and spices across different bazars in Bangladesh.
 
-[🌐 Live Demo](https://YOUR-PROJECT.vercel.app) · [📂 GitHub Repository](https://github.com/YOUR-USERNAME/YOUR-REPO)
+[🌐 Live Demo](https://market-price-q18w.vercel.app/) · [📂 GitHub Repository](https://github.com/Ummeaymanwebdev/Market-price)
 
 </div>
 
