@@ -22,7 +22,7 @@ export default async function Hero() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-        
+        {/* anchor link: route change হয় না, একই পেজে স্ক্রল করে */}
           <a href="#সব-পণ্য" className="btn btn-primary btn-sm sm:btn-md">
             সব পণ্য দেখুন
           </a>
